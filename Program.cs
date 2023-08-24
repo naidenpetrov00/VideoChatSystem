@@ -1,4 +1,6 @@
-using VideoChatSystem.Controllers;
+using VideoChatSystem.Hubs;
+using VideoChatSystem.Services;
+using VideoChatSystem.Services.Interfaces;
 
 namespace VideoChatSystem
 {
@@ -11,6 +13,7 @@ namespace VideoChatSystem
 			// Add services to the container.
 			builder.Services.AddControllersWithViews();
 			builder.Services.AddSignalR();
+			builder.Services.AddSingleton<IUsersService, UsersService>();
 
 			var app = builder.Build();
 
