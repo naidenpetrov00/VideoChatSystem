@@ -33,8 +33,13 @@ namespace VideoChatSystem
 			app.UseAuthorization();
 
 			app.MapControllerRoute(
+				"roomDetails",
+				 "Room/{roomId}",
+				new { controller = "Room", action = "Create" });
+			app.MapControllerRoute(
 				name: "default",
 				pattern: "{controller=Home}/{action=Index}/{id?}");
+			
 			app.MapHub<DefaultHub>("/meeting");
 
 			app.Run();

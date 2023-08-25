@@ -1,4 +1,9 @@
-﻿window.onload = function () {
+﻿@model VideoChatSystem.Models.RoomInputModel
+
+<div id="video-grid">
+</div>
+
+<script>
 	const roomId = "@Model.RoomId";
 	let userId = null;
 	let localStream = null;
@@ -75,4 +80,4 @@
 
 		peers[userId] = call;
 	}
-}
+</script>

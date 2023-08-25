@@ -8,17 +8,7 @@ namespace VideoChatSystem.Controllers
 	{
 		public IActionResult Index()
 		{
-			return this.Redirect($"/room={Guid.NewGuid()}");
-		}
-
-		[HttpGet("/room={roomId}")]
-		public IActionResult Room(string roomId)
-		{
-			var roomModel = new RoomInputModel
-			{
-				RoomId = roomId,
-			};
-			return this.View(roomModel);
+			return this.View();
 		}
 	}
 }
